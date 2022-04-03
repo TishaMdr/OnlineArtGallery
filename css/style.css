@@ -1,0 +1,97 @@
+/*NAVIGATION BAR CSS <nav.css>*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+.navbar{ /*navigation bar*/
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(103, 184, 150);
+    z-index:9;
+}
+.nav{ /*logo, search box and link items*/
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brandlogo{ /*Logo*/
+    color: rgb(98, 42, 112);
+    font-size: 30px;
+    position: relative;
+    right: 70px;
+    height: 50px;
+}
+
+.nav-items{ /*search box*/
+    display: flex;
+    align-items: center;
+}
+
+.search-box{ /*search product box*/
+    width:200px;
+    height: 40px;
+    padding: 10px;
+    float: left;
+    background: none;
+    border: 2px solid rgb(250, 250, 250);
+    border-bottom-left-radius: 1px;
+    border-top-left-radius: 15px;
+    /*color: rgb(58, 65, 65)*/
+    font-size: 16px;
+    border-right:none;
+    text-transform: capitalize;
+}
+.btn{ /*search click button*/
+        width:100px;
+        height: 40px;
+        padding: 10px;
+        cursor: pointer;
+        background: rgb(98, 42, 112);
+        border: none;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 15px;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 16px;
+}
+.search-box::placeholder{ /*text inside boox*/
+    color: rgb(250, 250, 250);
+    font-family:'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+.nav-items a{ /*link for the cart*/
+    margin-right: -30px;
+}
+.nav-items a img{ /*Cart icon*/
+    margin-left: 20px;
+    margin-right: 50px;
+    width: 30px;
+    position: relative;
+    left: 20px;
+}
+
+.links-container{ /*home,about us...*/
+    width: 100%;
+    display: flex;
+    padding: 10px 10vw;
+    list-style: none;
+    border-top: 2px solid rgb(250, 250, 250);
+}
+
+.link{ /*home,about us... text edit*/
+    text-transform: capitalize;
+    padding: 0 50px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+}
+
+.link:hover{
+    color: rgb(98, 42, 112);
+}
