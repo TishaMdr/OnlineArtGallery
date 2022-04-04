@@ -10,14 +10,15 @@ const creatNav = () => {
                     <input type="text"class="search-box" type="search" placeholder="Search product">
                         <button class="btn">Search</button>
                 </div>
-                <a href="#"><img src="img/cart.png"></a>
+                <a href="#"><img src="img/shopping-cart.png"></a>
+                <a href="#"><img src="img/account.png"></a>
+
             </div>
         </div>
         <ul class="links-container">
-            <li class="link-items"><a href="hello.html" class="link">Home</a></li>
+            <li class="link-items"><a href="#" class="link">Home</a></li>
             <li class="link-items"><a href="aboutus.html" class="link">About us</a></li>
             <li class="link-items"><a href="#" class="link">Art Category</a></li>
-            <li class="link-items"><a href="#" class="link">My account</a></li>
         </ul>
     `;
 }
