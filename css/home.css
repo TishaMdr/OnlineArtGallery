@@ -29,21 +29,15 @@ Footer {
     position: relative;
 }
 
-/*
-.container {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    grid-gap: 50px;
-}*/
-
 .container h3 {
     font-size: 18px;
     margin-bottom: 28px;
     position: relative;
 }
+
 /*line under about quick*/
 .container h3::after {
-    content: " ";
+    content: "    ";
     position: absolute;
     width: 30px;
     height: 3px;
@@ -67,15 +61,88 @@ Footer {
     ;
 }
 
-.about .social_links .uil {
-    font-size: 23px;
+.social_links .social {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+.social_links .social:hover {
+    width: 200px;
+}
+
+.social_links .social .icon {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.social_links .social:nth-child(1):hover .icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social_links .social:nth-child(2):hover .icon {
+    background: #2866e3;
+}
+
+
+.social_links .social .icon i {
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.social_links .social:hover .icon i {
+    color: #fff;
+}
+
+.social_links .social span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.social_links .social:nth-child(1) span {
+    color: #4267B2;
+}
+
+.social_links .social:nth-child(2) span {
+    color: #1DA1F2;
+}
+
+.social_links .social:nth-child(3) span {
+    color: #E1306C;
+}
+
+.social_links .social:nth-child(4) span {
+    color: #333;
+}
+
+.social_links .social:nth-child(5) span {
+    color: #ff0000;
+}
+
+.about .social_links>h3 {
+    font-size: 20px;
     margin-right: 8px;
     transition: all .7s ease;
     cursor: pointer;
-}
-
-.social_links .uil:hover {
-    color: #fff;
+    color: rgb(103, 184, 150);
 }
 
 .Quick_links>h3 {
@@ -99,15 +166,18 @@ Footer {
 .links a:hover {
     color: #fff;
 }
+
 /*Contact in footer*/
-.Contact >h3
-{
-    color: rgb(103, 184, 150);;
+.Contact>h3 {
+    color: rgb(103, 184, 150);
+    ;
 }
-.Contact >.links
-{
-    color: rgb(103, 184, 150);;
+
+.Contact>.links {
+    color: rgb(103, 184, 150);
+    ;
 }
+
 /*Footer ends*/
 
 
