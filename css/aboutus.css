@@ -1,78 +1,98 @@
-#contact {
-    /*entire page*/
-    background: #79f590;
-    padding: 4rem 0 8rem;
-}
-
-#contact h2 {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-#form-container {
-    width: 50%;
-    background: rgb(105, 185, 231);
-    padding: 3rem;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    height: 0%;
+
 }
 
-#form-container h3 {
-    color: #000;
-    font-family: "Playfair Display", serif;
-    margin-bottom: 2rem;
-}
-
-#form-container label {
-    display: block;
-    color: #000;
-    margin-top: 1rem;
-}
-
-#form-container input,
-#form-container textarea {
-    display: block;
-    border-radius: 20px;
-    padding: 10px;
-    border: 1px solid #ced4da;
+body {
     width: 100%;
-    box-sizing: border-box;
-    height: 43px;
-    font-family: "Roboto", "Helvetica", "Sans-serif";
-    font-size: 1rem;
-    color: #495057;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+.about {
+    background: url(../img/khan.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+
 }
 
-#form-container textarea {
-    height: 170px;
-    margin-bottom: 2rem;
-    resize: none;
+.inner-section {
+    width: 55%;
+    float: right;
+    background-color: #a8c2e4;
+    padding: 140px;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
 }
 
-#address-container {
-    width: 38%;
-    background: #fff;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    height: 0%;
+.inner-section h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: underline;
 }
 
-#address-container label {
-    font-weight: 700;
-    display: block;
-    margin-top: 2rem;
+.text {
+    font-size: 15px;
+    color: #000000;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
 }
 
-#address-container label:first-child {
-    margin-top: 0;
+.skills button {
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    width: 200px;
+    background-color:rgb(103, 184, 150);
+    color: white;
+    cursor: pointer;
 }
 
-#address-container address {
-    margin-bottom: 1.5rem;
-    font-style: normal;
+.skills button:hover {
+    transition: 1s;
+    background-color: #ecf5f5;
 }
 
-#address-container a {
-    text-decoration: none;
-    color: rgb(103, 184, 150);
+@media screen and (max-width:1200px) {
+    .inner-section {
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .about {
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+
+    .inner-section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .about {
+        padding: 0;
+    }
+
+    .inner-section {
+        padding: 60px;
+    }
+
+    .skills button {
+        font-size: 19px;
+        padding: 5px;
+        width: 160px;
+    }
 }
