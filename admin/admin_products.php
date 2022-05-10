@@ -14,7 +14,7 @@ if (isset($_POST['add_product'])) {
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $price = $_POST['price'];
-                            $description = $_POST['description'];
+    $description = $_POST['description'];
     $image = $_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
@@ -102,11 +102,10 @@ if (isset($_POST['update_product'])) {
     <!-- product CRUD section starts  -->
 
     <section class="add-products">
-
         <form action="" method="post" enctype="multipart/form-data">
             <h3>add product</h3>
             <input type="text" name="name" class="box" placeholder="Enter product name" required>
-            <input type="number" min="0" name="price" class="box" placeholder="Enter product price" required>
+            <input type="number" min="0" name="price" class="box" placeholder="Enter price" required>
             <input type="text" name="description" class="box" placeholder="Add description" required>
             <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
             <input type="submit" value="add product" name="add_product" class="btn">

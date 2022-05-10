@@ -191,7 +191,10 @@ header .flex .account-box .delete-btn:hover {
     color: blue;
 }
 /*Dashboard Home*/
-
+.dashboard .h1{
+    font-family: cursive;
+    font-size: 60px;
+}
 
 /*PRODUCTSSS*/
 .add-products form {

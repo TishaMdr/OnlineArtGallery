@@ -14,13 +14,13 @@ body {
     background-color: #f1f1f1;
     overflow: hidden;
 }
+
 .about {
-    background: url(../img/khan.jpg) no-repeat left;
+    background: url(../img/brush.jpg);
     background-size: 55%;
     background-color: #fdfdfd;
     overflow: hidden;
     padding: 100px 0;
-
 }
 
 .inner-section {
@@ -33,17 +33,19 @@ body {
 
 .inner-section h1 {
     margin-bottom: 30px;
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 50px;
+    font-weight: 100;
     text-decoration: underline;
+    font-family: Brush Script MT, Brush Script Std, cursive;
 }
 
 .text {
-    font-size: 15px;
+    font-size: 20px;
     color: #000000;
     line-height: 30px;
     text-align: justify;
     margin-bottom: 40px;
+    font-family: cursive;
 }
 
 .skills button {
@@ -54,7 +56,7 @@ body {
     border-radius: 20px;
     padding: 8px;
     width: 200px;
-    background-color:rgb(103, 184, 150);
+    background-color: rgb(103, 184, 150);
     color: white;
     cursor: pointer;
 }
