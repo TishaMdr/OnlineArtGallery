@@ -1,61 +1,180 @@
-@import 'style.css';
-
-header {
+/*DELETE THIS not needed anymore*/
+/*NAVBARRR*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 18vh;
+    background-color: rgb(103, 184, 150);
+    z-index: 9;
+}
+
+.nav {
+    /*logo, search box and link items*/
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav .brandlogo {
+    color: rgb(98, 42, 112);
+    font-size: 30px;
     position: relative;
-    color: #fff;
+    right: 70px;
+    height: 50px;
+}
+
+.nav .icons {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+
+.links-container {
+    /*home,about us...*/
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    padding: 5px 10px;
+    list-style: none;
+    border-top: 2px solid rgb(250, 250, 250);
+}
+
+.link {
+    /*home,about us... text edit*/
+    text-transform: capitalize;
+    padding: 0 50px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    font-size: 20px;
+}
+
+.link:hover {
+    color: rgb(98, 42, 112);
+}
+
+.navbar .user-box {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: blue;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+    width: 30rem;
+    display: none;
+    animation: fadeIn .2s linear;
+}
+
+.navbar .user-box.active {
+    display: inline-block;
+}
+
+.navbar .user-box p {
+    font-size: 2rem;
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+}
+
+.navbar .user-box p span {
+    color: var(--purple);
+}
+
+.navbar .delete-btn {
+    margin-top: 0;
+}
+
+/*END NAVBARRR*/
+.home {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/artt.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.home .content {
     text-align: center;
-    font-size: 30px;
-    padding: 0 200px;
+    width: 60rem;
 }
 
-.h1{
-    text-decoration: underline;
-}
-.img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+.home .content h3 {
+    font-size: 50px;
+    color: white;
+    text-transform: uppercase;
 }
 
-/*FOOTER*/
-Footer {
+
+.btn,
+.option-btn,
+.delete-btn,
+.white-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    border-radius: 2.5rem;
+    text-transform: capitalize;
+}
+
+.white-btn,
+.btn {
+    background-color: rgb(98, 42, 112);
+}
+
+.white-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/*NEW FOOTER HERREREJASSSSSSSSSS*/
+
+
+.footer {
     width: 100%;
     height: auto;
     padding: 60px 11% 110px;
-    background-color: rgb(98, 42, 112);
+    background-color: rgb(92, 112, 42);
     font-family: pop;
     position: relative;
 }
 
-.container h3 {
-    font-size: 18px;
-    margin-bottom: 28px;
-    position: relative;
+.footer .box-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
 }
 
-/*line under about quick*/
-.container h3::after {
-    content: "    ";
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: rgb(103, 184, 150);
-    border-radius: 10px;
-    bottom: -6px;
-    left: 0;
+.footer .box-container .box h3 {
+    text-transform: uppercase;
+    color: black;
+    text-decoration: underline;
+    font-size: 25px;
+    padding-bottom: 1rem;
 }
 
-.about>h3 {
-    color: rgb(103, 184, 150);
-}
-
-.about>p {
+.footer .box-container .box p,
+.footer .box-container .box a {
+    display: block;
     font-size: 20px;
     opacity: .8;
     line-height: 26px;
@@ -65,125 +184,18 @@ Footer {
     ;
 }
 
-.social_links .social {
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    float: left;
-    margin: 0 5px;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-out;
+.footer .box-container .box p i,
+.footer .box-container .box a i {
+    color: var(--purple);
+    padding-right: .5rem;
 }
 
-.social_links .social:hover {
-    width: 200px;
+.footer .box-container .box a:hover {
+    color: black;
+    text-decoration: underline;
 }
 
-.social_links .social .icon {
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    border-radius: 50px;
-    box-sizing: border-box;
-    line-height: 60px;
-    transition: all 0.3s ease-out;
-}
-
-.social_links .social:nth-child(1):hover .icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
-
-.social_links .social:nth-child(2):hover .icon {
-    background: #2866e3;
-}
-
-
-.social_links .social .icon i {
-    font-size: 25px;
-    line-height: 60px;
-    transition: all 0.3s ease-out;
-}
-
-.social_links .social:hover .icon i {
-    color: #fff;
-}
-
-.social_links .social span {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 60px;
-    margin-left: 10px;
-    transition: all 0.3s ease-out;
-}
-
-.social_links .social:nth-child(1) span {
-    color: #4267B2;
-}
-
-.social_links .social:nth-child(2) span {
-    color: #1DA1F2;
-}
-
-.social_links .social:nth-child(3) span {
-    color: #E1306C;
-}
-
-.social_links .social:nth-child(4) span {
-    color: #333;
-}
-
-.social_links .social:nth-child(5) span {
-    color: #ff0000;
-}
-
-.about .social_links>h3 {
-    font-size: 20px;
-    margin-right: 8px;
-    transition: all .7s ease;
-    cursor: pointer;
-    color: rgb(103, 184, 150);
-}
-
-.Quick_links>h3 {
-    color: rgb(103, 184, 150);
-}
-
-.Quick_links .links {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.links a {
-    text-decoration: none;
-    color: rgb(103, 184, 150);
-    margin-bottom: 5px;
-    font-size: 15px;
-    transition: all .7s ease;
-}
-
-.links a:hover {
-    color: #fff;
-}
-
-/*Contact in footer*/
-
-.Contact>h3 {
-    color: rgb(103, 184, 150);
-    ;
-}
-
-.Contact>.links {
-    color: rgb(103, 184, 150);
-    ;
-}
-
-/*Footer ends*/
+/*FOOTERRRRRRRRR ENDS HEREEEE*/
 
 
 .product {

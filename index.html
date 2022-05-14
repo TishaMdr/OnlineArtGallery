@@ -19,28 +19,45 @@ if (!isset($user_id)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Project I</title>
     <link rel="stylesheet" href="css/index.css" </head>
-    <nav class="navbar"></nav>
-
-    <header>
-        <div class="container">
-            <div class="header-info-bar">
-                <h1>"Welcome to The Art Age"</h1>
+    <nav class="navbar">
+        <!--NAVBARRRRR-->
+        <div class="nav">
+            <div class="brandlogo">
+                <h1>The<span>Art</span>Age</h1>
+            </div>
+            <div class="nav-items">
+                <div class="search">
+                    <input type="text" class="search-box" type="search" placeholder="Search product">
+                    <button class="btn">Search</button>
+                </div>
+                <a href="#"><img src="img/cart.png"></a>
+                <a href="admin/login.php"><img src="img/user.png"></a>
             </div>
         </div>
-        <div class="img">
-            <img src="img/artt.jpg" width="100%" height="100%">
-        </div>
-        </div>
-    </header>
+        <ul class="links-container">
+            <li class="link-items"><a href="#" class="link">Home</a></li>
+            <li class="link-items"><a href="aboutus.html" class="link">About us</a></li>
+            <li class="link-items"><a href="#" class="link">Art Category</li>
+        </ul>
+    </nav>
 
-    <!--CARDS CONTAINER-->
+    <section class="home">
+
+        <div class="content">
+            <h3>Welcome to The Art Age.</h3>
+            <a href="#" class="white-btn">discover more</a>
+        </div>
+
+    </section>
+
+    <!--CARDS CONTAINER
 
     <section class="product">
         <h2 class="product-category">Arts on sale</h2>
         <button class="pre-btn"><img src="img/arrow.png"></button>
         <button class="nxt-btn"><img src="img/arrow.png"></button>
         <div class="product-container">
-            <!--product is displayed frome here-->
+            <!--product is displayed frome here--
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
@@ -147,57 +164,93 @@ if (!isset($user_id)) {
             </div>
         </div>
     </section>
+-->
 
-    <!--FOOTER-->
-    <footer>
-        <div class="container">
-            <div class="about">
-                <h3>About</h3>
-                <p>
-                    Welcome to The Art Age, your online art gallery to buy arts. We're dedicated to providing you the
-                    very best
-                    of varieties of arts.
-                </p>
-                <div class="social_links">
-                    <h3>Social Media</h3>
-                    <div class="social">
-                        <div class="icon">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                        <span>Facebook</span>
-                    </div>
-                </div>
 
-                <div class="social_links">
-                    <div class="social">
-                        <div class="icon">
-                            <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i></a>
-                        </div>
-                        <span>Instagram</span>
-                    </div>
+    <!--PRODUCTSSSSSSSSSSS-->
+    <section class="products">
+
+        <h1 class="title">latest products</h1>
+
+        <div class="box-container">
+
+            <?php  
+          $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 6") or die('query failed');
+          if(mysqli_num_rows($select_products) > 0){
+             while($fetch_products = mysqli_fetch_assoc($select_products)){
+       ?>
+            <form action="" method="post" class="box">
+                <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+                <div class="name">
+                    <?php echo $fetch_products['name']; ?>
                 </div>
-                <br><br><br><br>
-                <div class="Quick_links">
-                    <h3>Quick Links</h3>
-                    <div class="links">
-                        <a href="#">Home</a>
-                        <a href="aboutus.html">About Us</a>
-                    </div>
+                <div class="price">$
+                    <?php echo $fetch_products['price']; ?>/-
                 </div>
-                <br><br>
-                <div class="Contact">
-                    <h3>Contact</h3>
-                    <div class="links">
-                        <p>9812345670</p><br>
-                        <p>theartage@gmail.com</p><br>
-                        <p>Balkumari, Lalitpur, Nepal</p>
-                    </div>
-                </div>
+                <input type="number" min="1" name="product_quantity" value="1" class="qty">
+                <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
+                <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+                <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+                <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+            </form>
+            <?php
+          }
+       }else{
+          echo '<p class="empty">no products added yet!</p>';
+       }
+       ?>
+        </div>
+
+        <div class="load-more" style="margin-top: 2rem; text-align:center">
+            <a href="shop.php" class="option-btn">load more</a>
+        </div>
+
+    </section>
+
+
+
+
+    <!--FOOOOOOOOOOOOOOOOTERRRRRRRR-->
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#">Home</a>
+                <a href="aboutus.html">About Us</a>
             </div>
-            <p></p>
-    </footer>
 
-    <script src="js/nav.js"></script>
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="login.php">login</a>
+                <a href="register.php">register</a>
+                <a href="cart.php">cart</a>
+                <a href="orders.php">orders</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <p> <i class="fas fa-phone"></i> +977 9812345670 </p>
+                <p> <i class="fas fa-phone"></i> +977 9865377777 </p>
+                <p> <i class="fas fa-envelope"></i> theartage@gmail.com </p>
+                <p> <i class="fas fa-map-marker-alt"></i> Balkumari, Lalitpur, Nepal </p>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!--  <script src="js/nav.js"></script> this is for navbar nav.js-->
     <script src="js/home.js"></script>
     </body>
 
