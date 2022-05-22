@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.inc.php';
+include 'config.php';
 
 session_start();
 
@@ -36,7 +36,7 @@ if (isset($_POST['add_to_cart'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>shop</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -50,23 +50,19 @@ if (isset($_POST['add_to_cart'])) {
 
     <?php include 'headeer.php'; ?>
 
-    <section class="home">
-
-        <div class="content">
-            <h3>Welcome to The Art Age.</h3>
-            <a href="#" class="white-btn">discover more</a>
-        </div>
-
-    </section>
+    <div class="heading">
+        <h3>our shop</h3>
+        <p> <a href="homee.php">home</a> / shop </p>
+    </div>
 
     <section class="products">
 
-        <h1 class="title">Latest products</h1>
+        <h1 class="title">latest products</h1>
 
         <div class="box-container">
 
             <?php
-            $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 6") or die('query failed');
+            $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) {
             ?>
@@ -88,24 +84,18 @@ if (isset($_POST['add_to_cart'])) {
             ?>
         </div>
 
-        <div class="load-more" style="margin-top: 2rem; text-align:center">
-            <a href="shop.php" class="option-btn">load more</a>
-        </div>
-
     </section>
 
-    <section class="home-contact">
 
-        <div class="content">
-            <h3>Have any questions?</h3>
-            <p>We are always available to help if you have any queries regarding our products. Feel free to talk to us.</p>
-            <a href="contact.php" class="white-btn">contact us</a>
-        </div>
 
-    </section>
+
+
+
 
 
     <?php include 'footerr.php'; ?>
+
+    <!-- custom js file link  -->
     <script src="../js/script.js"></script>
 
 </body>
