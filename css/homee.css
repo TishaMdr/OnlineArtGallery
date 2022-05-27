@@ -622,13 +622,13 @@ section {
     margin: 0 auto;
     display: flex;
     gap: 1rem;
- }
- 
- .search-form form .btn {
+}
+
+.search-form form .btn {
     margin-top: 0;
- }
- 
- .search-form form .box {
+}
+
+.search-form form .box {
     width: 100%;
     padding: 1.2rem 1.4rem;
     border: var(--border);
@@ -636,9 +636,9 @@ section {
     color: var(--black);
     background-color: var(--light-bg);
     border-radius: .5rem;
- }
+}
 
- 
+
 /*----------SEARCH ENDS HERE---------*/
 
 /*FOOTER HERRERESSSSSSSSS*/

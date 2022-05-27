@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.inc.php';
+include 'config.php';
 
 session_start();
 
@@ -44,7 +44,7 @@ if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
     $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
     $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
-    unlink('uploaded_img/' . $fetch_delete_image['image']);
+    unlink('../uploaded_img/' . $fetch_delete_image['image']);
     mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
     header('location:admin_products.php');
 }
@@ -60,7 +60,7 @@ if (isset($_POST['update_product'])) {
     $update_image = $_FILES['update_image']['name'];
     $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
     $update_image_size = $_FILES['update_image']['size'];
-    $update_folder = 'uploaded_img/' . $update_image;
+    $update_folder = '../uploaded_img/' . $update_image;
     $update_old_image = $_POST['update_old_image'];
 
     if (!empty($update_image)) {
@@ -69,7 +69,7 @@ if (isset($_POST['update_product'])) {
         } else {
             mysqli_query($conn, "UPDATE `products` SET image = '$update_image' WHERE id = '$update_p_id'") or die('query failed');
             move_uploaded_file($update_image_tmp_name, $update_folder);
-            unlink('uploaded_img/' . $update_old_image);
+            unlink('../uploaded_img/' . $update_old_image);
         }
     }
 
@@ -91,7 +91,7 @@ if (isset($_POST['update_product'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- custom admin css file link  -->
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
 </head>
 
@@ -157,7 +157,7 @@ if (isset($_POST['update_product'])) {
                     <form action="" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
                         <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
-                        <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
+                        <img src="../uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
                         <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
                         <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
                         <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
@@ -181,7 +181,7 @@ if (isset($_POST['update_product'])) {
 
 
     <!-- custom admin js file link  -->
-    <script src="admin_script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 

@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.inc.php';
+include 'config.php';
 
 session_start();
 
@@ -25,7 +25,8 @@ if (!isset($admin_id)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- custom admin css file link  -->
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
 </head>
 
 <body>
@@ -36,9 +37,9 @@ if (!isset($admin_id)) {
 
     <section class="dashboard">
 
-        <h1 class="title"></h1>
+        <h1 class="title">dashboard</h1>
 
-        <!--  <div class="box-container">
+        <div class="box-container">
 
             <div class="box">
                 <?php
@@ -128,11 +129,18 @@ if (!isset($admin_id)) {
 
     </section>
 
-        <!-- admin dashboard section ends -->
+    <!-- admin dashboard section ends -->
 
 
-        <!-- custom admin js file link  -->
-        <script src="admin_script.js"></script>
+
+
+
+
+
+
+
+    <!-- custom admin js file link  -->
+    <script src="../js/admin_script.js"></script>
 
 </body>
 

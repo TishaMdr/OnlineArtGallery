@@ -73,7 +73,7 @@ if (isset($_POST['order_btn'])) {
 
     <div class="heading">
         <h3>checkout</h3>
-        <p> <a href="home.php">home</a> / checkout </p>
+        <p> <a href="homee.php">home</a> / checkout </p>
     </div>
 
     <section class="display-order">
@@ -86,7 +86,7 @@ if (isset($_POST['order_btn'])) {
                 $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
                 $grand_total += $total_price;
         ?>
-                <p> <?php echo $fetch_cart['name']; ?> <span>(<?php echo '$' . $fetch_cart['price'] . '/-' . ' x ' . $fetch_cart['quantity']; ?>)</span> </p>
+                <p> <?php echo $fetch_cart['name']; ?> <br> <span>(<?php echo '$' . $fetch_cart['price'] . '/-' . ' x ' . $fetch_cart['quantity']; ?>)</span> </p>
         <?php
             }
         } else {
